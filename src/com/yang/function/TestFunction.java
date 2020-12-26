@@ -6,8 +6,10 @@ import java.util.function.Function;
  * @author yangjianlei
  * @title: TestFunction
  * @projectName java8test
- * @description: TODO
+ * @description: Function表示一个接受一个参数并产生结果的函数
  * @date 2020/12/2514:26
+ *
+ * Function是函数的意思，用来定义一个抽象函数，接收泛型T对象，返回泛型R对象。
  */
 public class TestFunction {
 
