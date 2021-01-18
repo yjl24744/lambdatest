@@ -42,12 +42,14 @@ public class TestOptional {
 
         Optional.ofNullable(person1.getName()).filter(v -> v.startsWith("y")).ifPresent(System.out::println);
 
+    }
 
+    public void test2(String key) {
     }
 
     public static void main(String[] args) {
         TestOptional optional = new TestOptional();
-        optional.test();
+        optional.test2(null);
     }
 }
 
