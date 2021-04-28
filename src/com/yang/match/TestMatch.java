@@ -4,6 +4,7 @@ import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.yang.pojo.ServiceTag;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,8 @@ import java.util.stream.Collectors;
 public class TestMatch {
     public static void main(String[] args) {
         TestMatch testMatch = new TestMatch();
-        testMatch.getTagList().forEach(System.out::println);
+        // testMatch.getTagList().forEach(System.out::println);
+        testMatch.test();
     }
 
     private List<ServiceTag> getTagList() {
@@ -50,5 +52,27 @@ public class TestMatch {
                     )
                     .collect(Collectors.toList());
         return tagList2;
+    }
+
+    public void test() {
+        List<String> list = ImmutableList.of(
+                "1001",
+                "1002",
+                "1003",
+                "1004",
+                "1005",
+                "aaa"
+        );
+        List<String> list2 = ImmutableList.of(
+                "1001",
+                "1002",
+                "1003"
+        );
+        boolean flag = list.stream().anyMatch(list2::contains);
+        System.out.println(flag);
+        flag = list.stream().allMatch(list2::contains);
+        System.out.println(flag);
+        String a = "aaA";
+        list.stream().filter(s -> s.toUpperCase().equals(a.toUpperCase())).forEach(System.out::println);
     }
 }

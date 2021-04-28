@@ -1,5 +1,10 @@
 package com.yang.pojo;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 public class Person {
     private String name;
     private String age;
@@ -57,4 +62,13 @@ public class Person {
     public void setAlias(String alias) {
         this.alias = alias;
     }
+
+    public static void main(String[] args) {
+        List<Person> people = new LinkedList<>();
+        Person person = new Person("yang", "18", "man", "y");
+        people.add(person);
+        person.setName("杨建雷");
+        people.forEach(System.out::println);
+    }
+
 }
